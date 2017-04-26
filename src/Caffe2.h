@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Caffe2 : NSObject
+@interface Caffe2: NSObject
 
 // set the networks enforced image input size. If not set, the images dimensions will be used.
 @property (atomic, assign) CGSize imageInputDimensions;
 
-- (instancetype) init:(nonnull NSString*) initNetFilename predict:(nonnull NSString*) predictNetFilename;
+- (null_unspecified instancetype)init UNAVAILABLE_ATTRIBUTE;
 
-- (nullable NSArray<NSNumber*>*) predict:(nonnull UIImage*) image;
+- (null_unspecified instancetype) init:(nonnull NSString*)initNetFilename predict:(nonnull NSString*)predictNetFilename error:(NSError * _Nullable * _Nullable)error
+NS_SWIFT_NAME(init(initNetNamed:predictNetNamed:));
 
+- (nullable NSArray<NSNumber*>*) predict:(nonnull UIImage*) image
+NS_SWIFT_NAME(prediction(regarding:));
 @end

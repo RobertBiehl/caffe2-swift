@@ -10,8 +10,7 @@ A simple integration into existing projects.
 
 ## 🚨 Attention
 > Please note that this pod is in a very early stage and currently has multiple shortcomings:
-> * Only works on the device! -- *no simulator support*
-> * No officially on CocoaPods yet! -- *because this lib does not run on the simulator yet* 
+> * Not officially on CocoaPods yet!
 > * Only runs on iOS 10.3! -- *should be fixed soon by udating the build_ios_pod.sh build script*
 > * Wrapper currently only supports classification tasks.
 
@@ -41,7 +40,7 @@ and disable bitcode for your Target by setting **Build Settings -> Enable Bitcod
 
 ### Additional steps:
 *These steps will hopefully be removed in later versions.*
-1) in **Build Phases -> Your Target -> Link Binary with Libraries** add `libstc++.tdb`.
+1) in **Build Phases -> Your Target -> Link Binary with Libraries** add `libstdc++.tdb`.
 2) in **Build Settings -> Other Linker Flags** remove `$(inherited)`and `-force_load "$(PODS_ROOT)/Caffe2Kit/install/lib/libCaffe2_CPU.a"`
 
 ## 🚀 Using Caffe2Kit
