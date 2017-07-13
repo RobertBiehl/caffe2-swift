@@ -5,10 +5,6 @@ SCRIPTS_DIR="$( cd "$(dirname "$0")"; pwd -P)"
 CAFFE2_ROOT="$( cd "$(dirname "$0")"/../lib/caffe2 ; pwd -P)"
 INSTALL_ROOT_DIR="$SCRIPTS_DIR/../install"
 
-echo "     SCRIPTS_DIR = $SCRIPTS_DIR"
-echo "     CAFFE2_ROOT = $CAFFE2_ROOT"
-echo "INSTALL_ROOT_DIR = $INSTALL_ROOT_DIR"
-
 mkdir -p $INSTALL_ROOT_DIR
 
 ## SIMULATOR
@@ -39,9 +35,9 @@ make install
 
 # Build for WatchOS
 BUILD_DIR="build_watchos_pod"
-# if [ ! -d "$CAFFE2_ROOT/$BUILD_DIR" ]; then
+if [ ! -d "$CAFFE2_ROOT/$BUILD_DIR" ]; then
   IOS_PLATFORM=WATCHOS BUILD_DIR=$BUILD_DIR INSTALL_DIR="$INSTALL_ROOT_DIR/watchos" $SCRIPTS_DIR/build_ios_pod.sh
-# fi
+fi
 cd "$CAFFE2_ROOT/$BUILD_DIR"
 
 # copy missing protoc files to build directory... not sure why they are in the wrong location
