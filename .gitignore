@@ -65,3 +65,4 @@ fastlane/screenshots
 fastlane/test_output
 
 examples/Caffe2Test/Pods/Local Podspecs/Caffe2Kit.podspec.json
+.DS_Store
